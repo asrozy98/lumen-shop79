@@ -14,5 +14,14 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return redirect('shop');
 });
+
+$router->get('shop', 'ShopController@index');
+$router->post('shop', 'ShopController@store');
+
+$router->get('cart', 'CartController@index');
+$router->post('cart', 'CartController@store');
+$router->post('cart/submit', 'CartController@submit');
+$router->delete('cart/{id}/delete', 'CartController@delete');
+$router->delete('cart/cancel', 'CartController@cancel');

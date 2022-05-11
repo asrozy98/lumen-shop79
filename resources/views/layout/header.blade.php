@@ -10,4 +10,16 @@
             </div>
         </div>
     </div>
+    <div class="navbar-dark bg-primary col-auto">
+        <div class="container">
+            <a href="{{ url('shop') }}"
+                class="text-decoration-none @if (request()->segment(1) == 'shop') text-white @else text-white-50 @endif">
+                Shop
+            </a>
+            <a href="{{ url('cart') }}"
+                class="text-decoration-none @if (request()->segment(1) == 'cart') text-white @else text-white-50 @endif">
+                Cart
+            </a>
+        </div>
+    </div>
 </header>
